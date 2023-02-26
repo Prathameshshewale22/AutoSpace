@@ -1,17 +1,19 @@
-# AuctoSpace
+
+
+# AutoSpace
 
 ## Document:
 System Requirement Specification Document
 
 ## Title:
-System Reqruiement Spefication for AutoSpace (online vehicle service booking system)
+System Reqruiement Spefication for AutoSpace (online vehicle servicing booking system)
 
 ## Team: 
 Direct Customer,Indirect Customer,Architect,Business Analyst,Quality Assurance Team, System Analyst
 
 ## Objective (Purpose):
 The AutoSpace Web Applictaion is intended to  provide complete solution for Consumers as well as internal users (Staff) through  a single Gateway using internet. 
-It will enable customers to browse through virtual service center and book a servicing slot for car without visting a center.
+It will enable customers to browse through virtual service center and book a servicing slot for vehicle without visting a center.
 
 ## Scope:
 The ability for customers to select the type of service they require along with date and time they would like the appointment to take place.
@@ -32,11 +34,11 @@ The System  will be able to show live Bussion Operation statistics trends throug
 
 ## Functional Requirements:
 
-Any annonymous User will be able to view different services avaialble on website.
-Registered Customer will be able to select different packages for thier vehicle servicing and repair.
+Any annonymous User will be able to view different services available on website.
+Registered Customer will be able to select different packages for their vehicle servicing and repair.
 Center Manager will be able to approve or reject request for servicing slot booked by customer.
 Center Manager will able to track and maintain slots available of servicing.
-Customer will be able request to add new specific requirement maintained by system.
+Customer will be able to request to add new specific requirement maintained by system.
 Customer will be able to update vehicle details which have been already added to vehicle list.
 Customer will be able to update his/ her personal information. 
 service packages will be provided based their category, sale, quantity, likes, recommendations.
