@@ -45,11 +45,11 @@ public class Customer extends BaseEntity {
 	@OneToMany(mappedBy="customer",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
 	private List<Vehicle> vehicles=new ArrayList<Vehicle>();
 	
-	@OneToOne(mappedBy = "cartOwner",cascade = CascadeType.ALL,orphanRemoval = true)
-	private Cart customerCart;
-	
-	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
-	private List<ServiceBooking> booking=new ArrayList<>();
+//	@OneToOne(mappedBy = "cartOwner",cascade = CascadeType.ALL,orphanRemoval = true)
+//	private Cart customerCart;
+//	
+//	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
+//	private List<ServiceBooking> booking=new ArrayList<>();
 
 	public Customer(String firstName, String lastName, String email, String password, String mobileNumber,
 			String address) {
@@ -60,6 +60,11 @@ public class Customer extends BaseEntity {
 		this.password = password;
 		this.mobileNumber = mobileNumber;
 		this.address = address;
+	}
+	
+	public void addVehicle(Vehicle newVehicle) {
+		this.vehicles.add(newVehicle);
+		newVehicle.setCustomer(this);
 	}
 
 }

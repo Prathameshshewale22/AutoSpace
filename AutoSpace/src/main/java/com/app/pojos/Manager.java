@@ -42,4 +42,15 @@ public class Manager extends BaseEntity {
 	@OneToOne
 	@JoinColumn(name = "center_id")
 	private ServiceCenter center;
+
+	public Manager(String firstName, String lastName, String email, String password, String mobileNumber) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.mobileNumber = mobileNumber;
+	}
+	
+	
 }

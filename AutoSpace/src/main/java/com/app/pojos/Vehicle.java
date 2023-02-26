@@ -2,6 +2,8 @@ package com.app.pojos;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,10 +32,18 @@ public class Vehicle extends BaseEntity {
 	
 	@ManyToOne
 	@JoinColumn(name="customer_id",nullable = false)
+	@JsonBackReference
 	private Customer customer;
 	
-	@OneToOne(mappedBy = "vehicle")
-	private ServiceBooking servicebooking;
+//	@OneToOne(mappedBy = "vehicle")
+//	private ServiceBooking servicebooking;
+
+	public Vehicle(String vehicleNumber, String company, String model) {
+		super();
+		this.vehicleNumber = vehicleNumber;
+		this.company = company;
+		this.model = model;
+	}
 	
 	
 }

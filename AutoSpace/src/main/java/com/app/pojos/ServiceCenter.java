@@ -12,13 +12,14 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@AllArgsConstructor
+
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @ToString
 public class ServiceCenter extends BaseEntity {
- 
+
 	@Column(length = 20,unique = true,nullable = false)
 	private String centerName;
 	
@@ -26,17 +27,30 @@ public class ServiceCenter extends BaseEntity {
 	private String centerAddress;
 	
 	@Column(length = 20)
-	private String City;
+	private String city;
 	
 	@Column(length = 10)
-	private String Zipcode;
+	private String zipcode;
 
 	@Column(length=12)
 	private String contactNumber;
 	
-	@Column(length = 15,unique = true,nullable = false)
+	@Column(length = 50,unique = true,nullable = false)
 	private String email;
 	
 	@OneToMany(mappedBy = "serviceCenter")
 	private List<ServiceBooking> bookings=new ArrayList<>();
+	
+	public ServiceCenter(String centerName, String centerAddress, String city, String zipcode, String contactNumber,
+			String email) {
+		super();
+		this.centerName = centerName;
+		this.centerAddress = centerAddress;
+		this.city = city;
+		this.zipcode = zipcode;
+		this.contactNumber = contactNumber;
+		this.email = email;
+	}
+	
+	
 }
