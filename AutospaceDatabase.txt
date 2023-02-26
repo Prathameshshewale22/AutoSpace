@@ -1,0 +1,22 @@
+create table payment(pid int primary key auto_increment,bid int references booking(bid),pmode varchar(25) not null,pdetails varchar(50) not null,pstatus varchar(50) not null,pamount decimal(9,20) not null);
+
+create table delivery_boy(dbid int primary key,scid int references service_center(scid),dbname varchar(50) not null,dbemail varchar(25) not null unique,dbmob varchar(50) not null unique,dbpassword varchar(25) not null unique)
+
+create table manager(mid int primary key auto_increment,scid int references service_center(scid),mfname varchar(50) not null,mlname varchar(50) not null,memail varchar(25) not null unique,mmob varchar(50) not null unique,mpassword varchar(25) not null unique)
+
+create table admin(aid  int primary key auto_increment,afname varchar(50) not null,alname varchar(50) not null,aemail varchar(25) not null unique,amob varchar(50) not null unique,apassword varchar(25) not null unique)
+
+create table customer(uid int primary key auto_increment, ufirst_name varchar(25), ulast_name varchar(25),uemail varchar(100) not null unique,
+upassword varchar(100) not null unique,umob varchar(50) not null unique,uaddress varchar(50));
+
+create table service(sid int primary key,sname varchar(25),sdescription varchar(100),sestimated_time varchar(25),sestimated_cost varchar(25));
+
+create table vehicle(vid int primary key auto_increment,vnumber varchar(25),vcomapny varchar(50),
+vmodel varchar(50),uid int references customer(uid));
+
+create table service_center(scid int primary key auto_increment,scname varchar(50) not null unique,scaddress varchar(50) not null unique,
+sccity varchar(15),
+sczipcode varchar(15) not null, scmob varchar(50) not null unique, scemail varchar(30) not null unique);
+
+
+create table booking( bid int primary key auto_increment,uid int references customer(uid),sid int references service(sid),vid int references vehicle(vid),scid int references service_center(scid),pid int references payment(pid),sstatus varchar(100),PickDropAddress varchar(100));
