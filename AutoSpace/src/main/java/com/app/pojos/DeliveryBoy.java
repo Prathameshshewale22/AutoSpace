@@ -41,6 +41,17 @@ public class DeliveryBoy extends BaseEntity {
     
 	@OneToOne
 	@JoinColumn(name = "center_id")
-	private ServiceCenter center;
+	private ServiceCenter scenter;
+
+	public DeliveryBoy(String firstName, String lastName, String email, String password, String mobileNumber) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.mobileNumber = mobileNumber;
+	}
+	
+	
 	
 }

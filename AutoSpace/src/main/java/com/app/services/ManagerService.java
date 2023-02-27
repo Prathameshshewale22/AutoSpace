@@ -7,12 +7,14 @@ import com.app.pojos.Manager;
 
 public interface ManagerService {
 	
-	Manager addManager(ManagerDto newManager);
+	Manager addManager(Long id,ManagerDto newManager);
 	
 	List<Manager> getAllManagers();
 	
 	String deleteManager(Long id);
 	
 	Manager updateManager(ManagerDto UpdatedManager);
+	
+	Manager findManagerById(Long id);
 
 }

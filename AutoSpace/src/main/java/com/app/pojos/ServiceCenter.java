@@ -38,8 +38,15 @@ public class ServiceCenter extends BaseEntity {
 	@Column(length = 50,unique = true,nullable = false)
 	private String email;
 	
-	@OneToMany(mappedBy = "serviceCenter")
+	@OneToMany(mappedBy = "serviceCenter",fetch = FetchType.EAGER)
 	private List<ServiceBooking> bookings=new ArrayList<>();
+	
+	@OneToOne
+	@JoinColumn(name="manager_id")
+	private Manager centerManager;
+	
+	@OneToMany(mappedBy = "scenter",fetch = FetchType.EAGER)
+	public List<DeliveryBoy> deliveryBoys=new ArrayList<>();
 	
 	public ServiceCenter(String centerName, String centerAddress, String city, String zipcode, String contactNumber,
 			String email) {
@@ -52,5 +59,13 @@ public class ServiceCenter extends BaseEntity {
 		this.email = email;
 	}
 	
+	public void addManager(Manager centerManager) {
+		this.setCenterManager(centerManager);
+	}
+	
+	public void addDeliveryBoy(DeliveryBoy deliveryBoy) {
+		this.deliveryBoys.add(deliveryBoy);
+		deliveryBoy.setScenter(this);
+	}
 	
 }

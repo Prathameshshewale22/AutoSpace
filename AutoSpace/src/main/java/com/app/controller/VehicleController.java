@@ -19,7 +19,7 @@ import com.app.services.VehicleServiceImpl;
 @RequestMapping("/vehicle")
 public class VehicleController {
 	@Autowired
-	public VehicleServiceImpl vehicleServices;
+	private VehicleServiceImpl vehicleServices;
     
 	@PostMapping
 	public Vehicle addVehicle(@RequestBody VehicleDto newvehicle) {

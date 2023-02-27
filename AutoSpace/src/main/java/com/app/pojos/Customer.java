@@ -42,7 +42,7 @@ public class Customer extends BaseEntity {
 	@Column(length = 50)
 	private String address;
 	
-	@OneToMany(mappedBy="customer",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
+	@OneToMany(mappedBy="customer",cascade = CascadeType.ALL,fetch = FetchType.EAGER,orphanRemoval = true)
 	private List<Vehicle> vehicles=new ArrayList<Vehicle>();
 	
 //	@OneToOne(mappedBy = "cartOwner",cascade = CascadeType.ALL,orphanRemoval = true)

@@ -17,7 +17,7 @@ import com.app.services.ServiceCenterServiceImpl;
 @RequestMapping("/servicecenter")
 public class ServiceCenterController {
 	@Autowired
-	public ServiceCenterServiceImpl SCService;
+	private ServiceCenterServiceImpl SCService;
 	
 	@PostMapping
 	public ServiceCenter AddServiceCenter(@RequestBody ServiceCenterDto newServiceCenter) {

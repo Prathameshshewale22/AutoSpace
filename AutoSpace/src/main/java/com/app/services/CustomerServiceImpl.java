@@ -26,7 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public List<Customer> getallCustomers() {
 		List<Customer> all=custRepo.findAll();
-		all.forEach(c->c.getVehicles().size());
+//		all.forEach(c->c.getVehicles().size());
 		return all;
 	}
 

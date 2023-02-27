@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.dto.ManagerDto;
@@ -19,11 +20,11 @@ import com.app.services.ManagerServiceImpl;
 @RequestMapping("/manager")
 public class ManagerController {
 	@Autowired
-	public ManagerServiceImpl managerService;
+	private ManagerServiceImpl managerService;
 	
-	@PostMapping
-	public Manager addManager(@RequestBody ManagerDto manager) {
-		return managerService.addManager(manager);
+	@PostMapping("/{id}")
+	public Manager addManager(@PathVariable Long id, @RequestBody ManagerDto manager) {
+		return managerService.addManager(id,manager);
 	}
 	
 	@GetMapping

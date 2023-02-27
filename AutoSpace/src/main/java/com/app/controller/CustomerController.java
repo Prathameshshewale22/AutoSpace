@@ -21,7 +21,7 @@ import com.app.services.CustomerServiceImpl;
 public class CustomerController {
 
 	@Autowired
-	public CustomerServiceImpl custService;
+	private  CustomerServiceImpl custService;
 	
 	@GetMapping
 	public List<Customer> getAllCustomers(){

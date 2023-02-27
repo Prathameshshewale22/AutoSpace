@@ -39,18 +39,11 @@ public class Manager extends BaseEntity {
 	@Column(length = 10,unique = true)
 	private String mobileNumber;
 	
-	@OneToOne
-	@JoinColumn(name = "center_id")
-	private ServiceCenter center;
-
-	public Manager(String firstName, String lastName, String email, String password, String mobileNumber) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.password = password;
-		this.mobileNumber = mobileNumber;
-	}
-	
+//	@OneToOne
+//	@JoinColumn(name = "center_id")
+//	private ServiceCenter center;
+//	public void addServiceCenter(ServiceCenter serviceCenter ) {
+//		this.setCenter(serviceCenter);
+//	}
 	
 }

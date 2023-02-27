@@ -10,5 +10,7 @@ public interface ServiceCenterService {
 	ServiceCenter addServiceCenter(ServiceCenterDto newServiceCenter);
 	
 	List<ServiceCenter> getAllServcieCenters();
+	
+	ServiceCenter findCenterById(Long id);
 
 }
