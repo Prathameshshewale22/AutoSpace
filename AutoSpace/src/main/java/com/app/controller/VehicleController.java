@@ -31,9 +31,9 @@ public class VehicleController {
 		return vehicleServices.getallVehicle();
 	}
 	
-	@GetMapping("/{id}")
-	public List<Vehicle> getAllVehicleByCutomerId(Long id){
-		return vehicleServices.findVehiclesByCustomerId(id);
+	@GetMapping("/{customerid}")
+	public List<Vehicle> getAllVehicleByCutomerId(Long customerid){
+		return vehicleServices.findVehiclesByCustomerId(customerid);
 	}
 	
 	@DeleteMapping("/{id}")

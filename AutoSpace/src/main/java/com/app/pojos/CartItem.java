@@ -2,10 +2,13 @@ package com.app.pojos;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 
 
@@ -15,14 +18,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name="cart_items")
+@ToString
 public class CartItem extends BaseEntity {
 	
 	private int quantity;
 	
-	private double totalPrice;
+	private double ServicePrice;
 	
 	@ManyToOne
 	@JoinColumn(name="cart_id")
+	@JsonBackReference
 	private Cart myCart;
 	
 	@OneToOne

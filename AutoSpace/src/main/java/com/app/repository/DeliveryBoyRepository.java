@@ -8,6 +8,6 @@ import com.app.pojos.DeliveryBoy;
 
 public interface DeliveryBoyRepository extends JpaRepository<DeliveryBoy, Long>{
 	
-	List<DeliveryBoy> findAllDeliveryBoysByCenterId(Long id);
+	List<DeliveryBoy> findAllDeliveryBoysByScenterId( Long id);
 
 }

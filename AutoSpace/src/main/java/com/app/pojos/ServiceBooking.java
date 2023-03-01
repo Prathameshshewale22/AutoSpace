@@ -27,7 +27,7 @@ public class ServiceBooking extends BaseEntity {
     @Enumerated(EnumType.STRING)
 	private ServiceStatus status;
 	
-	@Column(length=50)
+	@Column(length=200)
 	private String pickupDropAddress;
 	
 	@OneToOne

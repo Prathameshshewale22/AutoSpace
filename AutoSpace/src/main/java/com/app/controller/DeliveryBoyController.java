@@ -27,9 +27,9 @@ public class DeliveryBoyController {
 		return dboyser.getAllDeliveryBoys();
 	}
 	
-	@PostMapping("/{id}")
-	public DeliveryBoy addDeliveryBoy(@PathVariable Long id,@RequestBody DeliveryBoyDto newDeliveryBoy) {
-		return dboyser.addDeliveryBoy(id, newDeliveryBoy);
+	@PostMapping("/{centerid}")
+	public DeliveryBoy addDeliveryBoy(@PathVariable Long centerid,@RequestBody DeliveryBoyDto newDeliveryBoy) {
+		return dboyser.addDeliveryBoy(centerid, newDeliveryBoy);
 	}
 	
 	@DeleteMapping("/{id}")

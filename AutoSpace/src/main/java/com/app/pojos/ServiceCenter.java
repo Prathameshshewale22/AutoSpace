@@ -23,7 +23,7 @@ public class ServiceCenter extends BaseEntity {
 	@Column(length = 20,unique = true,nullable = false)
 	private String centerName;
 	
-	@Column(length = 50)
+	@Column(length = 200)
 	private String centerAddress;
 	
 	@Column(length = 20)
@@ -45,7 +45,7 @@ public class ServiceCenter extends BaseEntity {
 	@JoinColumn(name="manager_id")
 	private Manager centerManager;
 	
-	@OneToMany(mappedBy = "scenter",fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "scenter")
 	public List<DeliveryBoy> deliveryBoys=new ArrayList<>();
 	
 	public ServiceCenter(String centerName, String centerAddress, String city, String zipcode, String contactNumber,

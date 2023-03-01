@@ -2,10 +2,13 @@ package com.app.pojos;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
@@ -29,7 +32,7 @@ public class DeliveryBoy extends BaseEntity {
 	@Column(length = 20)
 	private String lastName;
 
-	@Column(length = 20,unique=true,nullable = false)
+	@Column(length = 40,unique=true,nullable = false)
 	private String email;
 
 	@Column(length = 20,unique = true,nullable = false)
@@ -39,8 +42,9 @@ public class DeliveryBoy extends BaseEntity {
 	@Column(length = 10,unique = true)
 	private String mobileNumber;
     
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "center_id")
+	@JsonBackReference
 	private ServiceCenter scenter;
 
 	public DeliveryBoy(String firstName, String lastName, String email, String password, String mobileNumber) {

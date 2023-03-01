@@ -17,7 +17,7 @@ import lombok.ToString;
 @Table(name="services")
 public class Services extends BaseEntity {
 	
-	@Column(length=20)
+	@Column(length=50)
 	private String serviceName;
 	
 	private String description;

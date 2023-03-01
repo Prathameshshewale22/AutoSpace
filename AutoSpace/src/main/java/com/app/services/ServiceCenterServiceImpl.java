@@ -24,10 +24,12 @@ public class ServiceCenterServiceImpl implements ServiceCenterService{
 		return SCRepo.save(nServiceCenter);
 	}
 
+	
 	@Override
 	public List<ServiceCenter> getAllServcieCenters() {
 		List<ServiceCenter> all = SCRepo.findAll();
 		all.forEach(s->s.getBookings().size());
+		all.forEach(b->b.getDeliveryBoys().size());
 		return all;
 	}
 

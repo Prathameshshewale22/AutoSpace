@@ -20,11 +20,11 @@ import lombok.ToString;
 @Setter
 public class Vehicle extends BaseEntity {
 
-	@Column(length=10,unique = true)
+	@Column(length=15,unique = true)
 	
 	private String vehicleNumber;
 	
-	@Column(length=20)
+	@Column(length=30)
 	private String company;
 	
 	@Column(length=20)

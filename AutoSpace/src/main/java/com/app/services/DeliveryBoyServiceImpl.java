@@ -31,12 +31,14 @@ public class DeliveryBoyServiceImpl implements DeliveryBoyService{
 
 	@Override
 	public List<DeliveryBoy> getAllDeliveryBoys() {		
-		return deliveryBoyRepo.findAll();
+		List<DeliveryBoy> all=deliveryBoyRepo.findAll();
+		all.forEach(s->s.getScenter().deliveryBoys.size());
+		return all;
 	}
 
 	@Override
 	public List<DeliveryBoy> getDeliveryBoysByCenterId(Long Id) {
-		return deliveryBoyRepo.findAllDeliveryBoysByCenterId(Id);
+		return deliveryBoyRepo.findAllDeliveryBoysByScenterId(Id);
 	}
 
 	@Override
