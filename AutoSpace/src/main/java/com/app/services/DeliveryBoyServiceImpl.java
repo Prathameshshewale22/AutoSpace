@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.app.custom_exceptions.ResourceNotFoundException;
 import com.app.dto.DeliveryBoyDto;
 import com.app.pojos.DeliveryBoy;
 import com.app.pojos.ServiceCenter;
@@ -47,8 +48,15 @@ public class DeliveryBoyServiceImpl implements DeliveryBoyService{
 			 deliveryBoyRepo.deleteById(id);
 			 return "deleted!!";
 		}
-		return "Not deleted";
-		
+		return "Not deleted";	
 	}
+
+	@Override
+	public DeliveryBoy getDeliveryBoyById(Long id) {
+	
+		return deliveryBoyRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("not found"));
+	}
+	
+	
 
 }

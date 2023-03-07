@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
@@ -50,6 +51,7 @@ public class Customer extends BaseEntity {
 	private Cart customerCart;
 	
 	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
+	@JsonIgnore
 	private List<ServiceBooking> bookings=new ArrayList<>();
 
 	public Customer(String firstName, String lastName, String email, String password, String mobileNumber,

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.app.custom_exceptions.ResourceNotFoundException;
 import com.app.dto.ServiceCenterDto;
 import com.app.pojos.Manager;
 import com.app.pojos.ServiceCenter;
@@ -17,7 +18,6 @@ public class ServiceCenterServiceImpl implements ServiceCenterService{
 	@Autowired
 	private ServiceCenterRepository SCRepo;
 	
-
 	@Override
 	public ServiceCenter addServiceCenter(ServiceCenterDto newServiceCenter) {
 		ServiceCenter nServiceCenter=new ServiceCenter(newServiceCenter.getCenterName(), newServiceCenter.getCenterAddress(), newServiceCenter.getCity(), newServiceCenter.getZipcode(), newServiceCenter.getContactNumber(), newServiceCenter.getEmail());
@@ -28,16 +28,20 @@ public class ServiceCenterServiceImpl implements ServiceCenterService{
 	@Override
 	public List<ServiceCenter> getAllServcieCenters() {
 		List<ServiceCenter> all = SCRepo.findAll();
-		all.forEach(s->s.getBookings().size());
-		all.forEach(b->b.getDeliveryBoys().size());
+//		all.forEach(s->s.getBookings().size());
+//		all.forEach(b->b.getDeliveryBoys().size());
+//		all.forEach(b->b.getBookings().);
 		return all;
 	}
 
 	@Override
 	public ServiceCenter findCenterById(Long id) {
 		
-		return SCRepo.findById(id).orElseThrow();
+		return SCRepo.findById(id).orElseThrow(()-> new ResourceNotFoundException("ServiceCenterNotFound"));
 	}
+
+
+	
 
 	
 

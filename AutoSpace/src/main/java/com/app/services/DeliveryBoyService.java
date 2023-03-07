@@ -15,5 +15,7 @@ public interface DeliveryBoyService {
 	
 	String deleteDeliveryBoy(Long id);
 	
+	DeliveryBoy getDeliveryBoyById(Long id);
+	
 
 }
