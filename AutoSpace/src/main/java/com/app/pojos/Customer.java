@@ -48,9 +48,9 @@ public class Customer extends BaseEntity {
 	@OneToOne(mappedBy = "cartOwner",cascade = CascadeType.ALL,orphanRemoval = true)
 	//empty cart for every customer
 	private Cart customerCart;
-//	
-//	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
-//	private List<ServiceBooking> booking=new ArrayList<>();
+	
+	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
+	private List<ServiceBooking> bookings=new ArrayList<>();
 
 	public Customer(String firstName, String lastName, String email, String password, String mobileNumber,
 			String address) {

@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Service.css";
+import "./Centers.css";
 
-const Service = ({ service }) => {
-  const {id, serviceName,description,estimatedTime,estimatedCost } = service;
+const Centers = ({ service }) => {
+  const {id, centerName,centerAddress,city,zipcode,contactNumber,email} = service;
   const navigate = useNavigate();
-
+  console.log(centerName)
   const navigateToDetails = id =>{
     navigate(`/service/${id}`);
   }
@@ -14,19 +14,19 @@ const Service = ({ service }) => {
       <div className="card mx-auto" style={{ width: "25rem" }}>
         {/* <img src={img} className="card-img-top w-100" alt="..." /> */}
         <div className="card-body">
-          <h5 className="card-title">{serviceName}</h5>
+          <h5 className="card-title">{centerName}</h5>
           <p className="card-text">
-            {description}
+            {centerAddress}
           </p>
           <p className="card-text">
-            TimeRequired: {estimatedTime}
+          contactNumber: {contactNumber}
           </p>
           <p className="card-text">
-            Price: {estimatedCost}
+          email: {email}
           </p>
-          <button onClick={ () => navigateToDetails(id)} className="btn btn-primary">
+          {/* <button onClick={ () => navigateToDetails(id)} className="btn btn-primary">
             Book {serviceName}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
@@ -34,4 +34,4 @@ const Service = ({ service }) => {
   );
 };
 
-export default Service;
+export default Centers;

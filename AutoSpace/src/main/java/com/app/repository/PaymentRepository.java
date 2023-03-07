@@ -3,8 +3,8 @@ package com.app.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.app.pojos.ServiceCenter;
+import com.app.pojos.Payment;
 @Repository
-public interface ServiceCenterRepository extends JpaRepository<ServiceCenter, Long> {
+public interface PaymentRepository extends JpaRepository<Payment, Long> {
 
 }

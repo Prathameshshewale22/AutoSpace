@@ -4,13 +4,16 @@ import Features from "../../Features/Features";
 import Services from "../../Services/Services";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import Banner from "../Banner/Banner";
+import ServiceCenters from "../../ServiceCenters/ServiceCenters";
 const Home=()=>{
     return (
         <>
         <PageTitle title="Home"></PageTitle>
         <Banner></Banner>
-        <Features></Features>
         <Services></Services>
+        <ServiceCenters></ServiceCenters>
+        <Features></Features>
+        
         <Clients></Clients>
         </>
     )

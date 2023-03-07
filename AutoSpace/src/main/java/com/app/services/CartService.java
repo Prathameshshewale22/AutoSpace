@@ -9,4 +9,8 @@ public interface CartService {
 	Cart getCartByCustomerId(Long Id);
 	
 	void clearCart(Long id);
+	
+	boolean removeCartItem(Long cartItemId);
+	
+	Cart getCartById(Long cartId);
 }

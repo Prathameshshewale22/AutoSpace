@@ -10,6 +10,7 @@ import com.app.custom_exceptions.ResourceNotFoundException;
 import com.app.dto.CustomerResponse;
 import com.app.pojos.Cart;
 import com.app.pojos.Customer;
+import com.app.pojos.ServiceBooking;
 import com.app.repository.CustomerRepository;
 @Service
 @Transactional
@@ -29,6 +30,9 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<Customer> getallCustomers() {
 		List<Customer> all=custRepo.findAll();
 		all.forEach(c->c.getCustomerCart().getCartItems().size());
+		all.forEach(s->s.getBookings().size());
+//		all.forEach(s->System.out.println(s.getBookings().toString()));
+		all.forEach(b->b.getBookings().get(0).getServicesToDone().size());
 //		all.forEach(c->c.getVehicles().size());
 		return all;
 	}

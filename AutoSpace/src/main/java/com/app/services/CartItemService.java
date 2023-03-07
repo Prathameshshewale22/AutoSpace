@@ -7,5 +7,7 @@ public interface CartItemService {
  
 	CartItem addCartItem(Services newSerivce);
 	
+	boolean removeCartItem(Long itemId);
+	
 
 }

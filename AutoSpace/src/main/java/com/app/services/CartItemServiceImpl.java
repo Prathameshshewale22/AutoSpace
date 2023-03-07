@@ -27,4 +27,14 @@ public class CartItemServiceImpl implements CartItemService{
 	}
 
 
+	@Override
+	public boolean removeCartItem(Long itemId) {
+		if(cartitemRepo.existsById(itemId)) {
+		      cartitemRepo.deleteById(itemId);
+		      return true;
+		}
+		return false;
+	}
+
+
 }

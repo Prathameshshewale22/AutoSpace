@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.app.custom_exceptions.ResourceNotFoundException;
 import com.app.pojos.Cart;
 import com.app.pojos.CartItem;
 import com.app.pojos.Customer;
@@ -30,7 +31,6 @@ public class CartServiceImpl implements CartService {
 		Customer customer=custService.getCustomerById(CustomerId);
 		Services serviceToAdd=service.getServiceById(ServiceId);
 		CartItem cartItem = cartItems.addCartItem(serviceToAdd);
-		System.out.println("------"+cartItem);
 		customer.getCustomerCart().addCartItems(cartItem);
 		customer.getCustomerCart().setCartOwner(customer);
 		cartRepo.save(customer.getCustomerCart());
@@ -47,10 +47,25 @@ public class CartServiceImpl implements CartService {
 	public void clearCart(Long custId) {
 		Customer cust=custService.getCustomerById(custId);
 		Cart CustomerCart=cust.getCustomerCart();
-		if(cartRepo.existsById(CustomerCart.getId()))
-		cartRepo.deleteById(CustomerCart.getId());	
-		System.out.println(CustomerCart.getId());
+//		if(cartRepo.existsById(CustomerCart.getId()))
+//		cartRepo.deleteById(CustomerCart.getId());	
+//		System.out.println(CustomerCart.getId());
+		CustomerCart.getCartItems().clear();
 	}
+
+	@Override
+	public boolean removeCartItem(Long cartItemId) {
+		return cartItems.removeCartItem(cartItemId);
+		
+	}
+
+	@Override
+	public Cart getCartById(Long cartId) {
+		
+		return cartRepo.findById(cartId).orElseThrow(()-> new ResourceNotFoundException("resource not found!!"));
+	}
+	
+	
 
 	
 }
