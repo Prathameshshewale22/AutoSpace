@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./pages/Shared/Header/Header";
 import Home from "./pages/Home/Home/Home";
 import Services from './pages/Services/Services';
-import 
+import Admin from './pages/Admin/Admin/Admin';
 function App() {
   return (
     <div>
@@ -13,6 +13,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Home></Home>}></Route>
       <Route path="/service" element={<Services></Services>}></Route>
+      <Route path="/admin" element={<Admin></Admin>}></Route>
       </Routes>
     </div>
   );

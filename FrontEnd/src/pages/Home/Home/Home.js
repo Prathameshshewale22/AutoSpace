@@ -10,8 +10,8 @@ const Home=()=>{
         <>
         <PageTitle title="Home"></PageTitle>
         <Banner></Banner>
-        <Services></Services>
-        <ServiceCenters></ServiceCenters>
+        {/* <Services></Services>
+        <ServiceCenters></ServiceCenters> */}
         <Features></Features>
         
         <Clients></Clients>
