@@ -47,6 +47,8 @@ public class CartServiceImpl implements CartService {
 	public void clearCart(Long custId) {
 		Customer cust=custService.getCustomerById(custId);
 		Cart CustomerCart=cust.getCustomerCart();
+		CustomerCart.setTotalCartPrice(0);
+		CustomerCart.setTotalItems(0);
 //		if(cartRepo.existsById(CustomerCart.getId()))
 //		cartRepo.deleteById(CustomerCart.getId());	
 //		System.out.println(CustomerCart.getId());

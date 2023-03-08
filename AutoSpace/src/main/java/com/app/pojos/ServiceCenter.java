@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,14 +40,17 @@ public class ServiceCenter extends BaseEntity {
 	@Column(length = 50,unique = true,nullable = false)
 	private String email;
 	
-	@OneToMany(mappedBy = "serviceCenter",fetch = FetchType.EAGER)
+	@JsonIgnore
+	@OneToMany(mappedBy = "serviceCenter",fetch = FetchType.LAZY)
 	private List<ServiceBooking> bookings=new ArrayList<>();
 	
 	@OneToOne
 	@JoinColumn(name="manager_id")
+	@JsonIgnore
 	private Manager centerManager;
 	
 	@OneToMany(mappedBy = "scenter")
+	@JsonIgnore
 	public List<DeliveryBoy> deliveryBoys=new ArrayList<>();
 	
 	public ServiceCenter(String centerName, String centerAddress, String city, String zipcode, String contactNumber,

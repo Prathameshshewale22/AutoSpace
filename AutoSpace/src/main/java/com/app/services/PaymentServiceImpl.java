@@ -62,7 +62,9 @@ public class PaymentServiceImpl implements PaymentService{
 		newServiceBooking.setPickupDropAddress(PickupDropaddress);
 		List<CartItem> allItems=foundCart.getCartItems();
 		allItems.forEach(item->newServiceBooking.addService(item.getService()));
-		return sbService.addNewBooking(newServiceBooking) ;
+		 ServiceBooking NewBooking = sbService.addNewBooking(newServiceBooking) ;
+		 cartService.clearCart(foundCart.getCartOwner().getId());
+		 return NewBooking;
 	}
 
 }

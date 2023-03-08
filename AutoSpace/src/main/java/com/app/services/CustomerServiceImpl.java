@@ -32,15 +32,17 @@ public class CustomerServiceImpl implements CustomerService {
 		all.forEach(c->c.getCustomerCart().getCartItems().size());
 		all.forEach(s->s.getBookings().size());
 //		all.forEach(s->System.out.println(s.getBookings().toString()));
-		all.forEach(b->b.getBookings().get(0).getServicesToDone().size());
-//		all.forEach(c->c.getVehicles().size());
+//		all.forEach(b->b.getBookings().get(0).getServicesToDone().size());
 		return all;
 	}
 
 	@Override
 	public Customer getCustomerById(Long id) {
-	
-		return custRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("invalid Customer id"));
+		Customer cust=custRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("invalid Customer id"));
+		cust.getCustomerCart().getCartItems().size();
+		cust.getBookings().size();
+//		cust.getBookings().get(0).getServicesToDone().size();
+		return cust;
 	}
 	
 	

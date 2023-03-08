@@ -49,7 +49,6 @@ public class ServiceBooking extends BaseEntity {
 	
 	@ManyToOne
 	@JoinColumn(name="serviceCenter_id")
-	@JsonBackReference
 	private ServiceCenter serviceCenter;
 	
 	@OneToOne
