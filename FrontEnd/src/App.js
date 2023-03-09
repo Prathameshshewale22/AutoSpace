@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./pages/Shared/Header/Header";
 import Home from "./pages/Home/Home/Home";
-import Services from './pages/Services/Services';
+import Services from "./pages/Services/Services"
 import Admin from './pages/Admin/Admin/Admin';
 import ManagerDetails from './pages/Admin/ManagerDetails/ManagerDetails';
 import ManagerEdit from './pages/Admin/ManagerDetails/ManagerEdit';

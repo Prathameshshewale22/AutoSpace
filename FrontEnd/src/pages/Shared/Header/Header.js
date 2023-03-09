@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button,Container,Nav,Navbar,NavDropdown } from "react-bootstrap";
-import { Link,useNavigate } from "react-router-dom";
-//  import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
+// import { useAuthState } from "react-firebase-hooks/auth";
 import SecondLogo from "../../../images/SecondLogo.png";
 import './Header.css';
 const Header =()=>{
-   const navigate= useNavigate();
-  //  const [user] = useAuthState(auth);
-  //  const handleSignout = () => {
-  //     signOut(auth);
-  //   };
-  //   const handleNavigateC = () =>{
-  //     navigate(`/contact`);
-  //   }
-  const [user,setUser]=useState();
+   //const navigate= useNavigate();
+   // const [user] = useAuthState(auth);
+   // const handleSignout = () => {
+   //    signOut(auth);
+   //  };
+   //  const handleNavigateC = () =>{
+   //    navigate(`/contact`);
+   //  }
    return (
     <>
     <Navbar 
@@ -34,15 +33,22 @@ const Header =()=>{
             <Nav.Link as={Link} to="/">
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="service">Services</Nav.Link>
-              <Nav.Link as={Link} to="experts">Experts</Nav.Link>
-              <Nav.Link as={Link} to="about">About</Nav.Link>
-              <Nav.Link as={Link} to="contact">Contact</Nav.Link>
-              <Nav.Link as={Link} to="blogs">Blogs</Nav.Link>
-              <Nav.Link as={Link} to="admin">Admin</Nav.Link>
-              
+                <Nav.Link as={Link} to="service">Services</Nav.Link>
+                <Nav.Link as={Link} to="experts">Experts</Nav.Link>
+                <Nav.Link as={Link} to="about">
+                  About
+                </Nav.Link>
+                <Nav.Link as={Link} to="contact">
+                  Contact
+                </Nav.Link>
+                <Nav.Link as={Link} to="blogs">
+                  Blogs
+                </Nav.Link>
+                <Nav.Link as={Link} to="admin">
+                  Admin
+                </Nav.Link>
             </Nav>
-            <Nav>
+            {/* <Nav>
             {user && (
                 <>
                   <Nav.Link as={Link} to="addservice">
@@ -58,18 +64,20 @@ const Header =()=>{
               )}
               {user ? (
                 <> 
-                <Button  className="btn btn-danger rounded-pill">
+                <Button onClick={handleSignout} className="btn btn-danger rounded-pill">
                   Sign out
                 </Button></>
+                
+                
               ) : (
                 <Nav.Link as={Link} to="login">
                   Login
                 </Nav.Link>
                 
               )}
-              {!user && (<button className="btn btn-new rounded-pill mx-3">Let's Talk</button>)}
+              {!user && (<button className="btn btn-new rounded-pill mx-3" onClick={handleNavigateC}>Let's Talk</button>)}
              
-            </Nav>
+            </Nav> */}
           </Navbar.Collapse>
      </Container>
     </Navbar>
