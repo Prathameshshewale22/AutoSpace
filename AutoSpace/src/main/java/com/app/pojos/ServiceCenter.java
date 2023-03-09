@@ -40,13 +40,15 @@ public class ServiceCenter extends BaseEntity {
 	@Column(length = 50,unique = true,nullable = false)
 	private String email;
 	
+	private double centerRevenue;
+	
 	@JsonIgnore
 	@OneToMany(mappedBy = "serviceCenter",fetch = FetchType.LAZY)
 	private List<ServiceBooking> bookings=new ArrayList<>();
 	
 	@OneToOne
 	@JoinColumn(name="manager_id")
-	@JsonIgnore
+	
 	private Manager centerManager;
 	
 	@OneToMany(mappedBy = "scenter")

@@ -14,9 +14,11 @@ import com.app.pojos.Payment;
 import com.app.pojos.PaymentMode;
 import com.app.pojos.PaymentStatus;
 import com.app.pojos.ServiceBooking;
+import com.app.pojos.ServiceCenter;
 import com.app.pojos.Services;
 import com.app.repository.PaymentRepository;
 import com.app.repository.ServiceBookingRepository;
+import com.app.repository.ServiceCenterRepository;
 @Service
 @Transactional
 public class PaymentServiceImpl implements PaymentService{
@@ -28,6 +30,9 @@ public class PaymentServiceImpl implements PaymentService{
 	
 	@Autowired
 	private ServiceBooking_ServiceImpl sbService;
+	
+	@Autowired
+	private ServiceCenterRepository centerRepo;
 	
 	@Autowired
 	private ServiceCenterServiceImpl sCenter;
@@ -57,6 +62,9 @@ public class PaymentServiceImpl implements PaymentService{
 		ServiceBooking newServiceBooking=new ServiceBooking();
 		newServiceBooking.addPayment(donePayment);
 		newServiceBooking.addCustomer(foundCart.getCartOwner());
+		ServiceCenter center = sCenter.findCenterById(ServiceCenterId);
+		center.setCenterRevenue(center.getCenterRevenue()+foundCart.getTotalCartPrice());
+		centerRepo.save(center);
 		newServiceBooking.addServiceCenter(sCenter.findCenterById(ServiceCenterId));
 		newServiceBooking.addVehicle(vService.findVehicleById(VehicleId));
 		newServiceBooking.setPickupDropAddress(PickupDropaddress);

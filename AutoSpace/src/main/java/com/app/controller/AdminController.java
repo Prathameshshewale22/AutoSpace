@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.dto.CountData;
 import com.app.pojos.Admin;
 import com.app.services.AdminServiceImpl;
 
@@ -27,5 +28,10 @@ public class AdminController {
 	@GetMapping
 	public List<Admin> getAllAdmin(){
 		return admin.getAllAdmins();
+	}
+	
+	@GetMapping("/dashboard/counts")
+	public CountData getCounts() {
+		return admin.getAllCounts();
 	}
 }
