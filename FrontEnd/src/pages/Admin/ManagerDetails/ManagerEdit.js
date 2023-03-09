@@ -60,7 +60,7 @@ const ManagerEdit=()=>{
      placeholder="Enter Email"/>
   </div>
   <div className="form-group">
-    <label htmlFor="mobileNumber">Email</label>
+    <label htmlFor="mobileNumber">Mobile Number</label>
     <input type="text" className="form-control" name="mobileNumber" id="mobileNumber"
      value={mgrob.mobileNumber}
      onChange={handleChange}
@@ -69,6 +69,7 @@ const ManagerEdit=()=>{
   <button type="button" class="btn btn-primary" onClick={updateData}>update Employee</button>
 </form>
         </div>
+        
         
     )
 }

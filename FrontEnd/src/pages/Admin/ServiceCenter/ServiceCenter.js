@@ -1,5 +1,6 @@
 import React from "react";
 import { useState ,useEffect} from "react"
+import AddManager from "../ManagerDetails/AddManager";
 import { Link } from "react-router-dom"
 import {PenFill,Trash} from 'react-bootstrap-icons';
 // import ManagerRow from "./ManagerRow";
@@ -44,7 +45,7 @@ const ServiceCenter=()=>{
     
     // }
     const addManager=(id)=>{
-       
+       <AddManager centerId={id}></AddManager>
     }
     return (
         <>
@@ -63,6 +64,7 @@ const ServiceCenter=()=>{
             <th>zipcode</th>
             <th>contactNumber</th>
             <th>Manager</th>
+            <th>Assign Manager</th>
             </tr>
         </thead>
         <tbody>
@@ -76,11 +78,13 @@ const ServiceCenter=()=>{
                         <td>{center.email}</td>
                         <td>{center.zipcode}</td>
                         <td>{center.contactNumber}</td>
-         
+                        <td></td>
                         {/* <td>{center.centerManager[1]}&nbsp;&nbsp;{center.centerManager[2]}</td> */}
             
                     <td>
-                    <button type="button" className="btn btn-danger" name='btn' id="delete" onClick={()=>addManager(center.id)}></button>
+                    <Link to={{pathname:`/addManager/${center.id}`}}>
+                    <button type="button" className="btn btn-info fs-6" name='btn' id="delete" >Assign</button>
+                    </Link>
                     </td>
                     </tr>
     
