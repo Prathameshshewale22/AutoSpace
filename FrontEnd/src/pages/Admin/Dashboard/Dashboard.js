@@ -24,22 +24,6 @@ const Dashboard = () => {
     return (
     <div className="col main pt-5 mt-3">
          
-        <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-            <li className="breadcrumb-item"><a href="#">Home</a></li>
-            <li className="breadcrumb-item"><a href="#">Library</a></li>
-            <li className="breadcrumb-item active" aria-current="page">Data</li>
-        </ol>
-        </nav>
-        <p className="lead d-none d-sm-block">Add Employee Details and Records</p>
- 
-        <div className="alert alert-warning fade collapse" role="alert" id="myAlert">
-            <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">×</span>
-                <span className="sr-only">Close</span>
-            </button>
-            <strong>Data and Records</strong> Learn more about employee
-        </div>
         <div className="row mb-3">
             <div className="col-xl-3 col-sm-6 py-2">
                 <div className="card bg-success text-white h-100">
@@ -114,7 +98,7 @@ const Dashboard = () => {
         <div className="row ">
             <div className="col-lg-7 col-md-6 col-sm-12">
               <h5 className="mt-3 mb-3 text-secondary">
-               Check More Records of Employees
+               Service Station Details
               </h5>
                 <div className="table-responsive">
                     <table className="table table-striped">

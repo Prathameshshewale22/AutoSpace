@@ -13,9 +13,9 @@ const Sidebar = () => {
                     </ul>
                 </li>
                 <li className="nav-item mb-2"><a className="nav-link text-secondary" href="#"><i className="far fa-chart-bar font-weight-bold"></i> <span className="ml-3">Analytics</span></a></li>
-                <li className="nav-item mb-2"><a className="nav-link text-secondary" href="#"><i className="fas fa-file-export font-weight-bold"></i><span className="ml-3">Managers</span></a></li>
-                <li className="nav-item mb-2"><a className="nav-link text-secondary" href="#"><i className="fas fa-tablet-alt font-weight-bold"></i><span className="ml-3">ServiceCenter</span></a></li>
-                <li className="nav-item mb-2"><a className="nav-link text-secondary" href="#"><i className="fas fa-atom font-weight-bold"></i> <span className="ml-3">Customers</span></a></li>
+                <li className="nav-item mb-2"><a className="nav-link text-secondary" href="/managers"><i className="lni lni-users font-weight-bold"></i><span className="ml-3">Managers</span></a></li>
+                <li className="nav-item mb-2"><a className="nav-link text-secondary" href="/servicecenters"><i className="lni lni-home font-weight-bold"></i><span className="ml-3">ServiceCenter</span></a></li>
+                <li className="nav-item mb-2"><a className="nav-link text-secondary" href="#"><i className="lni lni-users font-weight-bold"></i> <span className="ml-3">Customers</span></a></li>
                 <li className="nav-item mb-2"><a className="nav-link text-secondary" href="#"><i className="far fa-folder font-weight-bold"></i> <span className="ml-3">Layouts</span></a></li>
 
             </ul>
