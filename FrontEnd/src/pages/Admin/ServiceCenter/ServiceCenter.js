@@ -13,11 +13,11 @@ const ServiceCenter=()=>{
             fetch('http://localhost:8080/servicecenter',{
                 method:"GET"
             })
-            .then(res => {console.log(res);
+            .then(res => {
                 return res.json()})
             .then(data => {setServiceCenters(data);
-                      setManagers(data);
-                      console.log(managers);
+                    //   setManagers(data["centerManager"]);
+                      console.log(serviceCenters);
             })
            
         }, [])
@@ -76,7 +76,9 @@ const ServiceCenter=()=>{
                         <td>{center.email}</td>
                         <td>{center.zipcode}</td>
                         <td>{center.contactNumber}</td>
-                        <td>{center.centerManager.firstName}&nbsp;&nbsp;{center.centerManager.firstName}</td>
+         
+                        {/* <td>{center.centerManager[1]}&nbsp;&nbsp;{center.centerManager[2]}</td> */}
+            
                     <td>
                     <button type="button" className="btn btn-danger" name='btn' id="delete" onClick={()=>addManager(center.id)}></button>
                     </td>
