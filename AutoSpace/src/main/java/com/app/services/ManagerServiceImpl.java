@@ -1,7 +1,9 @@
 package com.app.services;
 
+import java.io.Console;
 import java.util.List;
 
+import org.aspectj.weaver.NameMangler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,8 +51,15 @@ public class ManagerServiceImpl implements ManagerService{
 
 	@Override
 	public Manager updateManager(ManagerDto UpdatedManager) {
-		
-		return null;
+		Manager foundManager=managerRepo.findById(UpdatedManager.getId()).orElseThrow();
+		System.out.println(foundManager.getPassword());
+		foundManager.setFirstName(UpdatedManager.getFirstName());
+		foundManager.setLastName(UpdatedManager.getLastName());
+		foundManager.setEmail(UpdatedManager.getEmail());
+		foundManager.setMobileNumber(UpdatedManager.getMobileNumber());
+		foundManager.setPassword(foundManager.getPassword());
+		System.out.println(foundManager.getPassword());
+		return managerRepo.save(foundManager);
 	}
 
 	@Override

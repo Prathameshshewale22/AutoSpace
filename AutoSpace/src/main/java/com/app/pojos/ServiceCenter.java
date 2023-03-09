@@ -48,10 +48,7 @@ public class ServiceCenter extends BaseEntity {
 	
 	@OneToOne
 	@JoinColumn(name="manager_id")
-<<<<<<< HEAD
 	
-=======
->>>>>>> 7fcac9940b9e95e44f340463d52bcc5e1d17db0d
 	private Manager centerManager;
 	
 	@OneToMany(mappedBy = "scenter")

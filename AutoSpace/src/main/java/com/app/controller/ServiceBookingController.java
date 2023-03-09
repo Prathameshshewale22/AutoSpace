@@ -3,6 +3,7 @@ package com.app.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import com.app.services.ServiceBooking_ServiceImpl;
 
 @RestController
 @RequestMapping("/servicebooking")
+@CrossOrigin(origins = "*")
 public class ServiceBookingController {
 	
 	@Autowired

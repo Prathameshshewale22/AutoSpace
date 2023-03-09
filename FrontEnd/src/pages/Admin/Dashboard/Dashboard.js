@@ -8,17 +8,25 @@ import PieChart from '../Piechart/Piechart';
 const Dashboard = () => {
    
    const[record,setRecord] = useState([])
+   const[customerRec,setcustomerRec] = useState([])
  
    const getData = () =>
    {
-       fetch('https://jsonplaceholder.typicode.com/users')
+       fetch('http://localhost:8080/admin/dashboard/counts',{method:"GET"})
        .then(resposne=> resposne.json())
        .then(res=>setRecord(res))
    }
  
    useEffect(() => {
       getData();
+      getCustomer();
    },)
+
+   const getCustomer=()=>{
+    fetch('http://localhost:8080/customer',{method:"GET"})
+    .then(resposne=> resposne.json())
+    .then(res=>setcustomerRec(res))
+   }
     
  
     return (
@@ -31,8 +39,8 @@ const Dashboard = () => {
                         <div className="rotate">
                             <i className="fa fa-user fa-4x"></i>
                         </div>
-                        <h6 className="text-uppercase">Users</h6>
-                        <h1 className="display-4">134</h1>
+                        <h6 className="text-uppercase">Customers</h6>
+                        <h1 className="display-4">{record.customers}</h1>
                     </div>
                 </div>
             </div>
@@ -42,8 +50,8 @@ const Dashboard = () => {
                         <div className="rotate">
                             <i className="fa fa-list fa-4x"></i>
                         </div>
-                        <h6 className="text-uppercase">Posts</h6>
-                        <h1 className="display-4">87</h1>
+                        <h6 className="text-uppercase">Managers</h6>
+                        <h1 className="display-4">{record.managers}</h1>
                     </div>
                 </div>
             </div>
@@ -64,8 +72,8 @@ const Dashboard = () => {
                         <div className="rotate">
                             <i className="fa fa-share fa-4x"></i>
                         </div>
-                        <h6 className="text-uppercase">Shares</h6>
-                        <h1 className="display-4">36</h1>
+                        <h6 className="text-uppercase">DeliveryBoys</h6>
+                        <h1 className="display-4">{record.deliveryboys}</h1>
                     </div>
                 </div>
             </div>
@@ -112,13 +120,13 @@ const Dashboard = () => {
                             </tr>
                         </thead>
                         <tbody>
-                         {record.slice(0, 5).map((output)=>
+                         {customerRec.map((output)=>
                             <tr>
                                 <td>{output.id}</td>
-                                <td>{output.name}</td>
+                                <td>{output.firstName}</td>
+                                <td>{output.lastName}</td>
                                 <td>{output.email}</td>
-                                <td>{output.username}</td>
-                                <td>{output.website}</td>
+                                <td>{output.mobileNumber}</td>
                                 <td></td>
                             </tr>
                            )}

@@ -33,7 +33,7 @@ public class Manager extends BaseEntity {
 	private String email;
 
 	@Column(length = 20,unique = true,nullable = false)
-	@JsonProperty(access = Access.WRITE_ONLY)
+//	@JsonProperty(access = Access.WRITE_ONLY)
 	private String password;
 
 	@Column(length = 10,unique = true)

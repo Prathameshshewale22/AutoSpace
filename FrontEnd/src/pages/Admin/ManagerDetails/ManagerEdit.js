@@ -1,28 +1,42 @@
 import { useEffect,useState } from "react";
-import { useLocation ,useNavigate} from "react-router-dom";
+import { useLocation ,useNavigate,useParams} from "react-router-dom";
+import axios from "axios";
 
-const ManagerEdit=()=>{
-     
+const ManagerEdit=(props)=>{
+    const param=useParams();
+    console.log(param.id)
     const [mgrob,setmgrob]=useState({id:"",firstName:"",lastName:"",email:"",password:"",mobileNumber:""});
-     let data=useLocation().state;
-    
+    //  const state=useLocation().state;
+    // console.log(state.test)
     const navigate = useNavigate();
 
     
     useEffect(()=>{
-        setmgrob({...data.managerdata})
+        fetch('http://localhost:8080/manager/'+param.id,{
+            method:"GET"
+        })
+        .then(resposne=> resposne.json())
+        .then(res=>setmgrob(res))
+            // navigate("/managers");
     },[])
    
+    // const updateData=()=>{
+    //     fetch('http://localhost:8080/manager/'+mgrob.id,mgrob,{
+    //         method:"PUT"
+    //     })
+    //     .then((result)=>{
+    //         console.log(result.data);
+    //         navigate("/managers");
+    //     })
+    //     .catch(()=>{})
+    // }
     const updateData=()=>{
-        fetch('http://localhost:8080/manager/'+mgrob.id,mgrob,{
-            method:"PUT"
-        })
-        .then((result)=>{
-            console.log(result.data);
+        axios.post('http://localhost:8080/manager/update'+mgrob.id,mgrob,{mode:'no-cors'})
+        .then((res)=>{console.log(res)
             navigate("/managers");
-        })
-        .catch(()=>{})
+        }).catch((err)=>{console.log(err)})
     }
+
     const handleChange=(event)=>{
         const {name,value}=event.target;
         setmgrob({...mgrob,[name]:value});
@@ -60,7 +74,7 @@ const ManagerEdit=()=>{
      placeholder="Enter Email"/>
   </div>
   <div className="form-group">
-    <label htmlFor="mobileNumber">Email</label>
+    <label htmlFor="mobileNumber">Mobile Number</label>
     <input type="text" className="form-control" name="mobileNumber" id="mobileNumber"
      value={mgrob.mobileNumber}
      onChange={handleChange}

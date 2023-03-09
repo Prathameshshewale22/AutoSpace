@@ -66,8 +66,8 @@ const ManagerDetails=()=>{
                         <td>{manager.mobileNumber}</td>
                         <td> 
                         
-                        <Link to={{pathname:`/edit/${manager.id}`,state:{managerdata:manager}}}>
-                     <button type="button" className="btn btn-primary" name='btn' id="edit"><PenFill></PenFill></button>
+                        <Link to={{pathname:`/edit/${manager.id}`}} state={{test: 'test'}}>
+                     <PenFill></PenFill>
                         </Link>
                     </td>
                     <td>
