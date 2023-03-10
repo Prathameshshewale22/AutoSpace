@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,19 +34,9 @@ public class ManagerController {
 		return managerService.getAllManagers();
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("{id}")
 	public String deleteManager(@PathVariable Long id) {
 		return managerService.deleteManager(id);
-	}
-	
-	@GetMapping("/{id}")
-	public Manager getManagerById(@PathVariable Long id) {
-		return managerService.findManagerById(id);
-	}
-	
-	@PostMapping("/update")
-	public Manager updateManager(@RequestBody ManagerDto obj) {
-		return managerService.updateManager(obj);
 	}
 	
 

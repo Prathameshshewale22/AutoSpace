@@ -1,0 +1,11 @@
+#Sidebar{
+    
+    font-size: 18px;
+    font-style: italic;
+    width: fit-content;
+    /* font-family: Roboto; */
+    text-indent: 15px;
+    line-height: 3;
+    height:100vh
+    
+}

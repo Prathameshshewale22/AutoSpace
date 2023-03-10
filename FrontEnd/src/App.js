@@ -12,6 +12,10 @@ import ServiceCenter from './pages/Admin/ServiceCenter/ServiceCenter';
 import AddManager from './pages/Admin/ManagerDetails/AddManager';
 import ServiceManage from './pages/Admin/ServiceManage/ServiceManage';
 import AddService from './pages/Admin/ServiceManage/AddService';
+import Manager from './pages/Manager/Manager/Manager'
+import ServiceInfo from './pages/Manager/ServiceInfo/ServiceInfo';
+import DeliveryBoy from './pages/Manager/DiliveryBoy/DiliveryBoy';
+import AddDeliveryBoy from './pages/Manager/DiliveryBoy/AddDeliveryBoy';
 function App() {
   return (
     <div>
@@ -26,6 +30,10 @@ function App() {
       <Route path="/addManager/:id" element={<AddManager></AddManager>}></Route>
       <Route path="/services" element={<ServiceManage></ServiceManage>}></Route>
       <Route path="/addService" element={<AddService></AddService>}></Route>
+      <Route path="/manager" element={<Manager></Manager>}></Route>
+      <Route path="/serviceinfo" element={<ServiceInfo></ServiceInfo>}></Route>
+      <Route path="/dboys" element={<DeliveryBoy></DeliveryBoy>}></Route>
+      <Route path="/addDeliveryboy/:id" element={<AddDeliveryBoy></AddDeliveryBoy>}></Route>
       </Routes>
     </div>
   );
