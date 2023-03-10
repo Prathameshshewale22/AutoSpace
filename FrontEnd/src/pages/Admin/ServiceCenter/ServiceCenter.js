@@ -1,5 +1,6 @@
 import React from "react";
 import { useState ,useEffect} from "react"
+import AddManager from "../ManagerDetails/AddManager";
 import { Link } from "react-router-dom"
 import {PenFill,Trash} from 'react-bootstrap-icons';
 // import ManagerRow from "./ManagerRow";
@@ -44,7 +45,7 @@ const ServiceCenter=()=>{
     
     // }
     const addManager=(id)=>{
-       
+       <AddManager centerId={id}></AddManager>
     }
     return (
         <>
@@ -62,7 +63,12 @@ const ServiceCenter=()=>{
             <th>email</th>
             <th>zipcode</th>
             <th>contactNumber</th>
+<<<<<<< HEAD
             <th>Manager Name</th>
+=======
+            <th>Manager</th>
+            <th>Assign Manager</th>
+>>>>>>> 8188fffa8cb1a802cbd3013f200dc2dd146b7a5a
             </tr>
         </thead>
         <tbody>
@@ -76,9 +82,17 @@ const ServiceCenter=()=>{
                         <td>{center.email}</td>
                         <td>{center.zipcode}</td>
                         <td>{center.contactNumber}</td>
+<<<<<<< HEAD
                         <td>{center.centerManager.firstName}&nbsp;&nbsp;{center.centerManager.lastName}</td>
+=======
+                        <td></td>
+                        {/* <td>{center.centerManager[1]}&nbsp;&nbsp;{center.centerManager[2]}</td> */}
+            
+>>>>>>> 8188fffa8cb1a802cbd3013f200dc2dd146b7a5a
                     <td>
-                    <button type="button" className="btn btn-danger" name='btn' id="delete" onClick={()=>addManager(center.id)}></button>
+                    <Link to={{pathname:`/addManager/${center.id}`}}>
+                    <button type="button" className="btn btn-info fs-6" name='btn' id="delete" >Assign</button>
+                    </Link>
                     </td>
                     </tr>
     

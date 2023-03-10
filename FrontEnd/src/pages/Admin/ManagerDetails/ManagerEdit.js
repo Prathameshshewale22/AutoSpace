@@ -84,6 +84,7 @@ const ManagerEdit=(props)=>{
 </form>
         </div>
         
+        
     )
 }
 

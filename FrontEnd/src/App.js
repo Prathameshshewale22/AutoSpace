@@ -9,6 +9,7 @@ import Admin from './pages/Admin/Admin/Admin';
 import ManagerDetails from './pages/Admin/ManagerDetails/ManagerDetails';
 import ManagerEdit from './pages/Admin/ManagerDetails/ManagerEdit';
 import ServiceCenter from './pages/Admin/ServiceCenter/ServiceCenter';
+import AddManager from './pages/Admin/ManagerDetails/AddManager';
 function App() {
   return (
     <div>
@@ -20,6 +21,7 @@ function App() {
       <Route path="/managers" element={<ManagerDetails></ManagerDetails>}></Route>
       <Route path="/servicecenters" element={<ServiceCenter></ServiceCenter>}></Route>
       <Route path="/edit/:id" element={<ManagerEdit></ManagerEdit>}></Route>
+      <Route path="/addManager/:id" element={<AddManager></AddManager>}></Route>
       </Routes>
     </div>
   );

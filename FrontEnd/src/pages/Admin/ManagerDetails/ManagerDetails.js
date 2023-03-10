@@ -2,6 +2,7 @@ import React from "react";
 import { useState ,useEffect} from "react"
 import { Link } from "react-router-dom"
 import {PenFill,Trash} from 'react-bootstrap-icons';
+import "./manager.css"
 // import ManagerRow from "./ManagerRow";
 import ManagerEdit from './ManagerEdit';
 const ManagerDetails=()=>{
@@ -80,6 +81,7 @@ const ManagerDetails=()=>{
         </tbody>
     </table>
     </div>
+   
         </>
     );
 };

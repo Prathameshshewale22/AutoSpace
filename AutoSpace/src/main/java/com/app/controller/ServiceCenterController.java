@@ -16,7 +16,7 @@ import com.app.services.ServiceCenterServiceImpl;
 
 @RestController
 @RequestMapping("/servicecenter")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class ServiceCenterController {
 	@Autowired
 	private ServiceCenterServiceImpl SCService;
