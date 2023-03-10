@@ -10,15 +10,13 @@ import ManagerDetails from './pages/Admin/ManagerDetails/ManagerDetails';
 import ManagerEdit from './pages/Admin/ManagerDetails/ManagerEdit';
 import ServiceCenter from './pages/Admin/ServiceCenter/ServiceCenter';
 import AddManager from './pages/Admin/ManagerDetails/AddManager';
-<<<<<<< HEAD
 import Login from './pages/Login/Login';
 import CustomerInAdmin from './pages/Admin/Customer/CustomerInAdmin';
 import Customer from './pages/Customer/Customer/Customer';
 import Vehicle from './pages/Customer/Vehicle/Vehicle';
-=======
+
 import ServiceManage from './pages/Admin/ServiceManage/ServiceManage';
 import AddService from './pages/Admin/ServiceManage/AddService';
->>>>>>> 6d7c96b938da66a954faaa634523026791fa2528
 function App() {
   return (
     <div>
@@ -31,15 +29,13 @@ function App() {
       <Route path="/servicecenters" element={<ServiceCenter></ServiceCenter>}></Route>
       <Route path="/edit/:id" element={<ManagerEdit></ManagerEdit>}></Route>
       <Route path="/addManager/:id" element={<AddManager></AddManager>}></Route>
-<<<<<<< HEAD
       <Route path="/login" element={<Login></Login>}></Route>
       <Route path="/customer" element={<CustomerInAdmin></CustomerInAdmin>}></Route>
       <Route path="/customerdashboard" element={<Customer></Customer>}></Route>
       <Route path="/vehicle" element={<Vehicle></Vehicle>}></Route>
-=======
+
       <Route path="/services" element={<ServiceManage></ServiceManage>}></Route>
       <Route path="/addService" element={<AddService></AddService>}></Route>
->>>>>>> 6d7c96b938da66a954faaa634523026791fa2528
       </Routes>
     </div>
   );

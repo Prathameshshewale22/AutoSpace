@@ -39,32 +39,32 @@ const Header =()=>{
     //   })
     //   }, [])
 
-    // useEffect(()=>{
-    //   axios.get('http://localhost:8080/api/success',{ withCredentials: true })
-    //     // .then(res => res.json())
-    //     .then(res => {setUser(res);
-    //       console.log(user);
-    //      if(res.status===200 && res.data.role==='ROLE_ADMIN'){
-    //       localStorage.setItem("admin",JSON.stringify(res.data))
-    //       setLoginflag(true);
-    //       navigate('/admin')
-    //      }
-    //      else if(res.status===500){
-    //       navigate('/')
-    //      }
-    //     })
-    //     .catch((err)=>{console.log(err);
-    //       setLoginflag(false);
-    //       navigate('/admin')
-    //     })
-    // },[])
+    useEffect(()=>{
+      axios.get('http://localhost:8080/api/success',{ withCredentials: true })
+        // .then(res => res.json())
+        .then(res => {setUser(res);
+          console.log(user);
+         if(res.status===200 && res.data.role==='ROLE_ADMIN'){
+          localStorage.setItem("admin",JSON.stringify(res.data))
+          setLoginflag(true);
+          navigate('/admin')
+         }
+         else if(res.status===500){
+          navigate('/')
+         }
+        })
+        .catch((err)=>{console.log(err);
+          setLoginflag(false);
+          navigate('/')
+        })
+    },[])
  
     const logout=()=>{
       axios.get('http://localhost:8080/logout',{withCredentials:true})
       .then((res)=>{
         localStorage.clear();
         setLoginflag(false);
-        navigate('/admin')
+        navigate('/')
       })
       .catch(()=>{})
     }
