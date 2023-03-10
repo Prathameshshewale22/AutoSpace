@@ -20,7 +20,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class ManagerDto {
-	private Long id;
+	private String id;
 	private String firstName;
 	private String lastName;
 	private String email;
