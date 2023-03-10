@@ -10,6 +10,10 @@ import ManagerDetails from './pages/Admin/ManagerDetails/ManagerDetails';
 import ManagerEdit from './pages/Admin/ManagerDetails/ManagerEdit';
 import ServiceCenter from './pages/Admin/ServiceCenter/ServiceCenter';
 import AddManager from './pages/Admin/ManagerDetails/AddManager';
+import Login from './pages/Login/Login';
+import CustomerInAdmin from './pages/Admin/Customer/CustomerInAdmin';
+import Customer from './pages/Customer/Customer/Customer';
+import Vehicle from './pages/Customer/Vehicle/Vehicle';
 function App() {
   return (
     <div>
@@ -22,6 +26,10 @@ function App() {
       <Route path="/servicecenters" element={<ServiceCenter></ServiceCenter>}></Route>
       <Route path="/edit/:id" element={<ManagerEdit></ManagerEdit>}></Route>
       <Route path="/addManager/:id" element={<AddManager></AddManager>}></Route>
+      <Route path="/login" element={<Login></Login>}></Route>
+      <Route path="/customer" element={<CustomerInAdmin></CustomerInAdmin>}></Route>
+      <Route path="/customerdashboard" element={<Customer></Customer>}></Route>
+      <Route path="/vehicle" element={<Vehicle></Vehicle>}></Route>
       </Routes>
     </div>
   );

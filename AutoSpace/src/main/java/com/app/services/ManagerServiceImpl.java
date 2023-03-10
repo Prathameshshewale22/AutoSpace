@@ -51,7 +51,8 @@ public class ManagerServiceImpl implements ManagerService{
 
 	@Override
 	public Manager updateManager(ManagerDto UpdatedManager) {
-		Manager foundManager=managerRepo.findById(UpdatedManager.getId()).orElseThrow();
+		System.out.println(UpdatedManager);
+		Manager foundManager=managerRepo.findById((long) UpdatedManager.getId()).orElseThrow();
 		System.out.println(foundManager.getPassword());
 		foundManager.setFirstName(UpdatedManager.getFirstName());
 		foundManager.setLastName(UpdatedManager.getLastName());

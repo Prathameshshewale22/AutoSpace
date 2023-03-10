@@ -21,5 +21,7 @@ public interface ServiceBooking_Service {
 	List<ServiceBooking> allServiceBookingByStatus(String status);
 	
 	List<ServiceBooking> allServiceBookByCustomer(Long id);
+	
+	List<ServiceBooking> allServiceBookingsByCenterId(Long id);
 
 }

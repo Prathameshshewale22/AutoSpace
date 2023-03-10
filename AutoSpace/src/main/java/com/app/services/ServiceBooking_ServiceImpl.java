@@ -88,4 +88,12 @@ public class ServiceBooking_ServiceImpl implements ServiceBooking_Service {
 		throw new ResourceNotFoundException("customer not found");
 	}
 
+	@Override
+	public List<ServiceBooking> allServiceBookingsByCenterId(Long id) {
+		List<ServiceBooking> all = sbRepo.findAllBookingsByServiceCenterId(id);
+		all.forEach(b->b.getCustomer().getCustomerCart().getCartItems().size());
+		all.forEach(b->b.getServicesToDone().size());
+		return all;
+	}
+
 }

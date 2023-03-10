@@ -36,4 +36,9 @@ public class AdminController {
 	public CountData getCounts() {
 		return admin.getAllCounts();
 	}
+	
+	@PostMapping("/login")
+	public Admin login(String email,String password) {
+		return admin.adminLogin(email, password);
+	}
 }

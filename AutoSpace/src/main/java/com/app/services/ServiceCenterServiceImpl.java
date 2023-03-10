@@ -41,6 +41,13 @@ public class ServiceCenterServiceImpl implements ServiceCenterService{
 	}
 
 
+	@Override
+	public ServiceCenter getCenterByCenterManagerId(Long id) {
+	
+		return SCRepo.findByCenterManagerId(id);
+	}
+
+
 	
 
 	

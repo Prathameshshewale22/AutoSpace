@@ -12,5 +12,7 @@ public interface AdminService {
 	List<Admin> getAllAdmins();
 	
 	CountData getAllCounts();
+	
+	Admin  adminLogin(String email,String password);
 
 }

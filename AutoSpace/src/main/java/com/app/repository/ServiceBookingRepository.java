@@ -14,5 +14,7 @@ public interface ServiceBookingRepository extends JpaRepository<ServiceBooking, 
 	List<ServiceBooking> findAllBookingsByStatus(ServiceStatus status);
 	
 	List<ServiceBooking> findAllBookingByCustomerId(Long id);
+	
+	List<ServiceBooking> findAllBookingsByServiceCenterId(Long id);
 
 }

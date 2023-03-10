@@ -5,20 +5,20 @@ import { Link } from "react-router-dom"
 import {PenFill,Trash} from 'react-bootstrap-icons';
 // import ManagerRow from "./ManagerRow";
 
-const ServiceCenter=()=>{
+const CutomersInAdmin=()=>{
         let [flag,setflag]=useState(false);
-        const [serviceCenters, setServiceCenters] = useState([]);
+        const [Customers, setCustomers] = useState([]);
         const [managers,setManagers]=useState([]);
 
         useEffect( () =>{
-            fetch('http://localhost:8080/servicecenter',{
+            fetch('http://localhost:8080/customer',{
                 method:"GET"
             })
             .then(res => {
                 return res.json()})
-            .then(data => {setServiceCenters(data);
+            .then(data => {setCustomers(data);
                     //   setManagers(data["centerManager"]);
-                      console.log(serviceCenters);
+                    
             })
            
         }, [])
@@ -44,46 +44,43 @@ const ServiceCenter=()=>{
     //     })
     
     // }
-    const addManager=(id)=>{
-       <AddManager centerId={id}></AddManager>
-    }
+    // const addManager=(id)=>{
+    //    <AddManager centerId={id}></AddManager>
+    // }
     return (
         <>
         <div className="mx-auto" style={{align:"center"}} >
-        <h1 className="page-title" align="center">ServiceCenters</h1>
+        <h1 className="page-title" align="center">Customers</h1>
         </div>
         <div className="w-75 p-3 mx-auto shadow-sm p-3 mb-5 bg-body-tertiary rounded " >
     <table className="table table-striped border-top">
         <thead>
             <tr>
             <th>Id</th>
-            <th>centerName</th>
-            <th>centerAddress</th>
-            <th>city</th>
-            <th>email</th>
-            <th>zipcode</th>
-            <th>contactNumber</th>
-            <th>Manager Name</th>
-            <th>Assign Manager</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Mobile Number</th>
+            <th>Address</th>
             </tr>
         </thead>
         <tbody>
-            {serviceCenters.map((center)=> {
+            {Customers.map((cust)=> {
                  return (
                     <tr>
-                        <td>{center.id}</td>
-                        <td>{center.centerName}</td>
-                        <td>{center.centerAddress}</td>
-                        <td>{center.city}</td>
-                        <td>{center.email}</td>
-                        <td>{center.zipcode}</td>
-                        <td>{center.contactNumber}</td>
-                        <td>{center.centerManager && center.centerManager.firstName}&nbsp;&nbsp;{center.centerManager && center.centerManager.lastName}</td>
+                        <td>{cust.id}</td>
+                        <td>{cust.firstName}</td>
+                        <td>{cust.lastName}</td>
+                        {/* <td>{cust.city}</td> */}
+                        <td>{cust.email}</td>
+                        <td>{cust.mobileNumber}</td>
+                        <td>{cust.address}</td>
+                        {/* <td>{center.centerManager && center.centerManager.firstName}&nbsp;&nbsp;{center.centerManager && center.centerManager.lastName}</td> */}
 
                     <td>
-                    <Link to={{pathname:`/addManager/${center.id}`}}>
+                    {/* <Link to={{pathname:`/addManager/${center.id}`}}>
                     <button type="button" className="btn btn-info fs-6" name='btn' id="delete" >Assign</button>
-                    </Link>
+                    </Link> */}
                     </td>
                     </tr>
     
@@ -96,4 +93,4 @@ const ServiceCenter=()=>{
         </>
     );
 };
-export default ServiceCenter;
+export default CutomersInAdmin;

@@ -20,7 +20,7 @@ import com.app.services.ManagerServiceImpl;
 
 @RestController
 @RequestMapping("/manager")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ManagerController {
 	@Autowired
 	private ManagerServiceImpl managerService;
@@ -47,6 +47,7 @@ public class ManagerController {
 	
 	@PostMapping("/update")
 	public Manager updateManager(@RequestBody ManagerDto obj) {
+		System.out.println("in update");
 		return managerService.updateManager(obj);
 	}
 	
