@@ -1,9 +1,7 @@
 package com.app.services;
 
-import java.io.Console;
 import java.util.List;
 
-import org.aspectj.weaver.NameMangler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +10,6 @@ import com.app.dto.ManagerDto;
 import com.app.pojos.Manager;
 import com.app.pojos.ServiceCenter;
 import com.app.repository.ManagerRepository;
-import com.app.repository.ServiceCenterRepository;
 
 @Service
 @Transactional
@@ -51,7 +48,10 @@ public class ManagerServiceImpl implements ManagerService{
 
 	@Override
 	public Manager updateManager(ManagerDto UpdatedManager) {
-		Manager foundManager=managerRepo.findById(Long.parseLong(UpdatedManager.getId())).orElseThrow();
+
+		System.out.println(UpdatedManager);
+		Manager foundManager=managerRepo.findById((long) UpdatedManager.getId()).orElseThrow();
+//		Manager foundManager=managerRepo.findById(Long.parseLong(UpdatedManager.getId())).orElseThrow();
 		System.out.println(foundManager.getPassword());
 		foundManager.setFirstName(UpdatedManager.getFirstName());
 		foundManager.setLastName(UpdatedManager.getLastName());

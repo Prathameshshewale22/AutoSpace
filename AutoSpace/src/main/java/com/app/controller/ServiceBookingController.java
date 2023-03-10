@@ -52,4 +52,9 @@ public class ServiceBookingController {
 		return service.allServiceBookByCustomer(customerId);
 	}
 	
+	@GetMapping("/bycenter/{centerId}")
+	public List<ServiceBooking> getAllBookingbyCenterId(@PathVariable Long centerId ){
+		return service.allServiceBookingsByCenterId(centerId);
+	}
+	
 }

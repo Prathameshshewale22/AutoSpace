@@ -8,24 +8,26 @@ import PieChart from '../Piechart/Piechart';
 const Dashboard = () => {
    
    const[record,setRecord] = useState([])
-   const[customerRec,setcustomerRec] = useState([])
+   const[service,setService] = useState([])
  
    const getData = () =>
    {
-       fetch('http://localhost:8080/admin/dashboard/counts',{method:"GET"})
+       fetch('http://localhost:8080/admin/dashboard/counts',{method:"GET",credentials:'include'})
        .then(resposne=> resposne.json())
        .then(res=>setRecord(res))
    }
  
    useEffect(() => {
       getData();
-      getCustomer();
+
+      getServices();
+    //   getCustomer();
    },[])
 
-   const getCustomer=()=>{
+   const getServices=()=>{
     fetch('http://localhost:8080/service',{method:"GET"})
     .then(resposne=> resposne.json())
-    .then(res=>setcustomerRec(res))
+    .then(res=>setService(res))
    }
     
  
@@ -112,6 +114,9 @@ const Dashboard = () => {
                     <table className="table table-striped">
                         <thead className="thead-light">
                             <tr>
+
+                                <th>id</th>
+                                <th>First Name</th>
                                 <th>ID</th>
                                 <th>FirstName</th>
                                 <th>Header</th>
@@ -120,11 +125,11 @@ const Dashboard = () => {
                             </tr>
                         </thead>
                         <tbody>
-                         {customerRec.map((output)=>
+                         {service.map((output)=>
                             <tr>
                                 <td>{output.id}</td>
-                                <td>{output.firstName}</td>
-                                <td>{output.lastName}</td>
+                                <td>{output.serviceName}</td>
+                                <td>{output.descrption}</td>
                                 <td>{output.email}</td>
                                 <td>{output.mobileNumber}</td>
                                 <td></td>

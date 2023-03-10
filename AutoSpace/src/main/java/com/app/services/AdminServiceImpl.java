@@ -52,4 +52,10 @@ public class AdminServiceImpl implements AdminService {
 	     return new CountData(managers, customers, boys);
 	}
 
+	@Override
+	public Admin adminLogin(String email, String password) {
+		
+		return adminRepo.findByEmailAndPassword(email, password);
+	}
+
 }

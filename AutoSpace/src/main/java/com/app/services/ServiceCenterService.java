@@ -13,6 +13,8 @@ public interface ServiceCenterService {
 	
 	ServiceCenter findCenterById(Long id);
 	
+	ServiceCenter getCenterByCenterManagerId(Long id);
+	
 	
 
 }

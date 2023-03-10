@@ -34,7 +34,7 @@ public class VehicleController {
 	}
 	
 	@GetMapping("/{customerid}")
-	public List<Vehicle> getAllVehicleByCutomerId(Long customerid){
+	public List<Vehicle> getAllVehicleByCutomerId(@PathVariable Long customerid){
 		return vehicleServices.findVehiclesByCustomerId(customerid);
 	}
 	

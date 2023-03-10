@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.dto.ManagerDto;
@@ -19,7 +18,7 @@ import com.app.services.ManagerServiceImpl;
 
 @RestController
 @RequestMapping("/manager")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ManagerController {
 	@Autowired
 	private ManagerServiceImpl managerService;
@@ -40,4 +39,15 @@ public class ManagerController {
 	}
 	
 
+	@GetMapping("/{id}")
+	public Manager getManagerById(@PathVariable Long id) {
+		return managerService.findManagerById(id);
+	}
+	
+	@PostMapping("/update")
+	public Manager updateManager(@RequestBody ManagerDto obj) {
+		System.out.println("in update");
+		return managerService.updateManager(obj);
+	}
+	
 }
