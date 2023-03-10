@@ -78,8 +78,12 @@ const ServiceCenter=()=>{
                         <td>{center.email}</td>
                         <td>{center.zipcode}</td>
                         <td>{center.contactNumber}</td>
+<<<<<<< HEAD
                         <td>{center.centerManager && center.centerManager.firstName}&nbsp;&nbsp;{center.centerManager && center.centerManager.lastName}</td>
 
+=======
+                        <td>{center.centerManager.firstName}&nbsp;&nbsp;{center.centerManager.lastName}</td>
+>>>>>>> 6d7c96b938da66a954faaa634523026791fa2528
                     <td>
                     <Link to={{pathname:`/addManager/${center.id}`}}>
                     <button type="button" className="btn btn-info fs-6" name='btn' id="delete" >Assign</button>

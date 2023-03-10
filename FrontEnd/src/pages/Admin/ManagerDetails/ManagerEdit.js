@@ -43,7 +43,7 @@ const ManagerEdit=(props)=>{
         console.log(mgrob.id)
     }
     return(
-        <div>
+        <div className="w-75 p-3 mx-auto shadow-sm p-3 mb-5 bg-body-tertiary rounded ">
  <form>
   <div className="form-group">
     <label htmlFor="mgrid">Manager Id</label>
@@ -80,7 +80,7 @@ const ManagerEdit=(props)=>{
      onChange={handleChange}
      placeholder="Enter MobileNumber"/>
   </div>
-  <button type="button" class="btn btn-primary" onClick={updateData}>update Employee</button>
+  <button type="button" class="btn btn-primary" onClick={updateData}>update Manager</button>
 </form>
         </div>
         

@@ -17,7 +17,7 @@ import com.app.services.ServicesServiceImpl;
 
 @RestController
 @RequestMapping("/service")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class ServicesController {
 
 	@Autowired
@@ -33,7 +33,7 @@ public class ServicesController {
 		return service.addNewService(newService);
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("/{id}")
 	public String deleteService(@PathVariable Long id) {
 		return service.deleteServiceById(id);
 	}

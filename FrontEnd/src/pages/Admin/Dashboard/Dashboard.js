@@ -19,7 +19,11 @@ const Dashboard = () => {
  
    useEffect(() => {
       getData();
+<<<<<<< HEAD
       getServices();
+=======
+      getCustomer();
+>>>>>>> 6d7c96b938da66a954faaa634523026791fa2528
    },[])
 
    const getServices=()=>{
@@ -112,8 +116,13 @@ const Dashboard = () => {
                     <table className="table table-striped">
                         <thead className="thead-light">
                             <tr>
+<<<<<<< HEAD
                                 <th>id</th>
                                 <th>First Name</th>
+=======
+                                <th>ID</th>
+                                <th>FirstName</th>
+>>>>>>> 6d7c96b938da66a954faaa634523026791fa2528
                                 <th>Header</th>
                                 <th>Column</th>
                                 <th>Record Data</th>
