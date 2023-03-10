@@ -1,7 +1,8 @@
 import React from "react";
 import { useState ,useEffect} from "react"
 import { Link } from "react-router-dom"
-import {PenFill,Trash} from 'react-bootstrap-icons';
+import {PenFill,Trash,PersonPlusFill} from 'react-bootstrap-icons';
+import "./ServiceManage.css"
 const ServiceManage=()=>{
         const [services, setServices] = useState([]);
         let [flag,setflag]=useState(false);
@@ -38,7 +39,7 @@ const ServiceManage=()=>{
     return (
         <>
         <div className="mx-auto" style={{align:"center"}} >
-        <h1 className="page-title">Services</h1>
+        <h1 className="page-title" id="demo">Services</h1>
         </div>
         <div className="w-75 p-3 mx-auto shadow-sm p-3 mb-5 bg-body-tertiary rounded " >
     <table className="table table-striped border-top">
@@ -77,6 +78,11 @@ const ServiceManage=()=>{
             })}
         </tbody>
     </table>
+    <div id="demo">
+    <Link to="/addService" >
+        <PersonPlusFill></PersonPlusFill>Add
+    </Link>
+    </div>
     </div>
    
         </>

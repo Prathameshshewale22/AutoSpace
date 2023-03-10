@@ -20,7 +20,7 @@ const Dashboard = () => {
    useEffect(() => {
       getData();
       getCustomer();
-   },)
+   },[])
 
    const getCustomer=()=>{
     fetch('http://localhost:8080/service',{method:"GET"})
@@ -112,8 +112,8 @@ const Dashboard = () => {
                     <table className="table table-striped">
                         <thead className="thead-light">
                             <tr>
-                                <th>No</th>
-                                <th>Label</th>
+                                <th>ID</th>
+                                <th>FirstName</th>
                                 <th>Header</th>
                                 <th>Column</th>
                                 <th>Record Data</th>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState ,useEffect} from "react"
 import { Link } from "react-router-dom"
-import {PenFill,Trash} from 'react-bootstrap-icons';
+import {ArrowLeftCircleFill, PenFill,Trash} from 'react-bootstrap-icons';
 import "./manager.css"
 // import ManagerRow from "./ManagerRow";
 import ManagerEdit from './ManagerEdit';
@@ -41,7 +41,7 @@ const ManagerDetails=()=>{
     return (
         <>
         <div className="mx-auto" style={{align:"center"}} >
-        <h1 className="page-title">Managers</h1>
+        <h1 className="page-title" id="demo">Managers</h1>
         </div>
         <div className="w-75 p-3 mx-auto shadow-sm p-3 mb-5 bg-body-tertiary rounded " >
     <table className="table table-striped border-top">
@@ -80,6 +80,11 @@ const ManagerDetails=()=>{
             })}
         </tbody>
     </table>
+    <div id="demo2">
+    <Link to="/admin" id="size">
+        <ArrowLeftCircleFill></ArrowLeftCircleFill>
+    </Link>
+    </div>
     </div>
    
         </>

@@ -33,8 +33,7 @@ const AddManager=()=>{
         // .catch(()=>{})
         
         axios.post('http://localhost:8080/manager/'+cid.id, mgrob).then((response) => {
-          const result = response.data
-          if (result.status === 'success') {
+          if (response.status === 200) {
             alert('Successfully added Manager')
             navigate("/servicecenters");
           } else {

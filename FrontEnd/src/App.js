@@ -11,6 +11,7 @@ import ManagerEdit from './pages/Admin/ManagerDetails/ManagerEdit';
 import ServiceCenter from './pages/Admin/ServiceCenter/ServiceCenter';
 import AddManager from './pages/Admin/ManagerDetails/AddManager';
 import ServiceManage from './pages/Admin/ServiceManage/ServiceManage';
+import AddService from './pages/Admin/ServiceManage/AddService';
 function App() {
   return (
     <div>
@@ -24,6 +25,7 @@ function App() {
       <Route path="/edit/:id" element={<ManagerEdit></ManagerEdit>}></Route>
       <Route path="/addManager/:id" element={<AddManager></AddManager>}></Route>
       <Route path="/services" element={<ServiceManage></ServiceManage>}></Route>
+      <Route path="/addService" element={<AddService></AddService>}></Route>
       </Routes>
     </div>
   );
