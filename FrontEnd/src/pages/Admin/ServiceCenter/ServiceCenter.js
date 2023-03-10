@@ -62,7 +62,7 @@ const ServiceCenter=()=>{
             <th>email</th>
             <th>zipcode</th>
             <th>contactNumber</th>
-            <th>Manager</th>
+            <th>Manager Name</th>
             </tr>
         </thead>
         <tbody>
@@ -76,9 +76,7 @@ const ServiceCenter=()=>{
                         <td>{center.email}</td>
                         <td>{center.zipcode}</td>
                         <td>{center.contactNumber}</td>
-         
-                        {/* <td>{center.centerManager[1]}&nbsp;&nbsp;{center.centerManager[2]}</td> */}
-            
+                        <td>{center.centerManager.firstName}&nbsp;&nbsp;{center.centerManager.lastName}</td>
                     <td>
                     <button type="button" className="btn btn-danger" name='btn' id="delete" onClick={()=>addManager(center.id)}></button>
                     </td>

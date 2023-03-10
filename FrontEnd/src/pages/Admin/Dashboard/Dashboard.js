@@ -23,7 +23,7 @@ const Dashboard = () => {
    },)
 
    const getCustomer=()=>{
-    fetch('http://localhost:8080/customer',{method:"GET"})
+    fetch('http://localhost:8080/service',{method:"GET"})
     .then(resposne=> resposne.json())
     .then(res=>setcustomerRec(res))
    }

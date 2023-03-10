@@ -17,7 +17,7 @@ const ManagerEdit=(props)=>{
         })
         .then(resposne=> resposne.json())
         .then(res=>setmgrob(res))
-            // navigate("/managers");
+        //   navigate("/managers");
     },[])
    
     // const updateData=()=>{
@@ -31,8 +31,8 @@ const ManagerEdit=(props)=>{
     //     .catch(()=>{})
     // }
     const updateData=()=>{
-        axios.post('http://localhost:8080/manager/update'+mgrob.id,mgrob,{mode:'no-cors'})
-        .then((res)=>{console.log(res)
+        axios.post('http://localhost:8080/manager/update',mgrob)
+        .then((res)=>{console.log(res);
             navigate("/managers");
         }).catch((err)=>{console.log(err)})
     }
